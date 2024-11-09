@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #262626;
+    overflow-x: hidden;
+}
+
+header {
+    top: 0;
+    position: sticky;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar {
+    top: 0;
+    background-color: #262626;
+    padding: 25px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #efefef;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #F0A989;
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(#26262680, #262626), url('Cultura.png') center/cover;
+    color: #efefef;
+    padding: 350px 40px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-section {
+    padding: 100px 120px;
+}
+
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.8rem;
+    color: #F0A989;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-section h2:hover {
+    color: #F0A989;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0;
+}
+
+.product {
+    background-color: #efefef;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+.product img {
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+}
+
+.product h3 {
+    margin: 20px 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.product p {
+    color: #F0A989;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+.info {
+    background-color: #262626;
+    padding: 100px 20px;
+    color: white;
+    overflow-x: hidden;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.operational-details, .contact-social {
+    flex: 1;
+    margin: 0 25px;
+}
+
+.operational-details h3, .contact-social h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #F0A989;
+    font-weight: 700;
+}
+
+.operational-details p, .contact-social p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-social {
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #efefef;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon i {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    transition: transform 0.3s;
+}
+
+.social-icon span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 50px 40px;
+    background-color: #262626;
+    color: #efefef;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Tablet Styles (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+    .navbar {
+        padding: 20px 60px;
+    }
+
+    .nav-links {
+        gap: 30px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+    }
+
+    .hero {
+        padding: 250px 30px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .menu-section {
+        padding: 80px 60px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .product {
+        padding: 30px;
+    }
+
+    .product h3 {
+        font-size: 1.5rem;
+    }
+
+    .info-container {
+        padding: 0 30px;
+        gap: 20px;
+    }
+}
+
+/* Mobile Styles (up to 767px) */
+@media screen and (max-width: 767px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 200px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu-section {
+        padding: 60px 20px;
+    }
+
+    .menu-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .product {
+        padding: 25px;
+    }
+
+    .product h3 {
+        font-size: 1.4rem;
+    }
+
+    .product p {
+        font-size: 1.1rem;
+    }
+
+    .info {
+        padding: 60px 20px;
+    }
+
+    .info-container {
+        flex-direction: column;
+        padding: 0;
+        text-align: center;
+    }
+
+    .operational-details, .contact-social {
+        margin: 0 0 40px 0;
+    }
+
+    .operational-details h3, .contact-social h3 {
+        font-size: 1.8rem;
+    }
+
+    .operational-details p, .contact-social p {
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+
+    .social-icon i {
+        font-size: 2rem;
+    }
+
+    .social-icon span {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 30px 20px;
+        font-size: 0.9rem;
+    }
+}
