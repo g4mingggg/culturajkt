@@ -1,13 +1,3 @@
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
-document.addEventListener('keydown', function(e) {
-    if (e.ctrlKey && (e.key === 'c' || e.key === 'C')) {
-        e.preventDefault();
-    }
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
