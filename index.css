@@ -4,7 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-family: 'Montserrat', sans-serif;
     background-color: #efefef;
     overflow-x: hidden;
@@ -15,6 +23,35 @@ header {
     position: sticky;
     width: 100%;
     z-index: 1000;
+
+}
+
+.hamburger {
+    display: flex; 
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #262626;
+    margin: 4px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    margin: 0;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    margin: 0;
 }
 
 .navbar {
@@ -28,50 +65,68 @@ header {
 }
 
 .logo img {
+    padding: 0px 0px;
     height: 50px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 50px;
+    flex-direction: column;
+    position: fixed; 
+    top: 0;
+    left: -250px;
+    height: 100%; 
+    width: 250px; 
+    background-color: #efefef80;
+    padding: 20px; 
+    padding-top: 80px; 
+    transition: left 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(30px);
+}
+
+.nav-links.active {
+    left: 0; 
 }
 
 .nav-links a {
     text-decoration: none;
     color: #262626;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem; 
     transition: color 0.3s, transform 0.3s ease-in-out;
+    padding: 10px 15px; 
+    margin: 5px 0; 
+    display: block; 
 }
 
 .nav-links a:hover {
     color: #F0A989;
     transform: scale(1.1);
 }
-
 .hero {
     text-align: center;
-    background: linear-gradient(#26262680, #262626), url('Cultura.png') center/cover;
+    background: linear-gradient(#26262680, #26262680), url('Cultura.png') center/cover;
     color: #efefef;
-    padding: 350px 40px;
+    padding: 360px 40px;
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 3.5rem; 
     margin-bottom: 40px;
     font-weight: 700;
     transition: transform 0.3s ease-in-out;
 }
 
 .menu-section {
-    padding: 100px 120px;
+    padding: 144px 120px;
 }
 
 .menu-section h2 {
     text-align: center;
     margin-bottom: 50px;
-    font-size: 2.8rem;
+    font-size: 2.5rem; 
     color: #F0A989;
     font-weight: 600;
     transition: color 0.3s ease-in-out;
@@ -121,7 +176,7 @@ header {
 .product p {
     color: #F0A989;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.4rem; 
     margin-top: 20px;
 }
 
@@ -146,14 +201,14 @@ header {
 }
 
 .operational-details h3, .contact-social h3 {
-    font-size: 2rem;
+    font-size: 2rem; 
     margin-bottom: 20px;
     color: #262626;
     font-weight: 700;
 }
 
 .operational-details p, .contact-social p {
-    font-size: 1.2rem;
+    font-size: 1.2rem; 
     line-height: 1.8;
     font-weight: 400;
     margin-top: 10px;
@@ -203,11 +258,10 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1.2rem; 
     font-weight: 400;
 }
 
-/* Tablet Styles (768px to 1024px) */
 @media screen and (max-width: 1024px) {
     .navbar {
         padding: 20px 60px;
@@ -222,7 +276,7 @@ footer {
     }
 
     .hero {
-        padding: 250px 30px;
+        padding: 480px 30px;
     }
 
     .hero h1 {
@@ -252,22 +306,16 @@ footer {
     }
 }
 
-/* Mobile Styles (up to 767px) */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
     .navbar {
         padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .logo img {
-        height: 40px;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .nav-links {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 200px;
+        left: -200px;
     }
 
     .nav-links a {
@@ -275,41 +323,41 @@ footer {
     }
 
     .hero {
-        padding: 200px 20px;
+        padding: 400px 40px;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .menu-section {
-        padding: 60px 20px;
+        padding: 80px 20px;
     }
 
     .menu-section h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
     }
 
     .product-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
 
     .product {
-        padding: 25px;
+        padding: 20px;
     }
 
     .product h3 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .product p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .info {
-        padding: 60px 20px;
+        padding: 50px 20px;
     }
 
     .info-container {
@@ -319,31 +367,31 @@ footer {
     }
 
     .operational-details, .contact-social {
-        margin: 0 0 40px 0;
+        margin: 0 0 30px 0;
     }
 
     .operational-details h3, .contact-social h3 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
     }
 
     .operational-details p, .contact-social p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .social-links {
-        gap: 20px;
+        gap: 15px;
     }
 
     .social-icon i {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .social-icon span {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     footer {
-        padding: 30px 20px;
-        font-size: 0.9rem;
+        padding: 25px 15px;
+        font-size: 0.85rem;
     }
 }
