@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #262626;
+    background-color: #efefef;
     overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@ header {
 
 .navbar {
     top: 0;
-    background-color: #262626;
+    background-color: #efefef;
     padding: 25px 120px;
     display: flex;
     justify-content: space-between;
@@ -39,7 +39,7 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: #efefef;
+    color: #262626;
     font-weight: 600;
     font-size: 1.2rem;
     transition: color 0.3s, transform 0.3s ease-in-out;
@@ -126,7 +126,7 @@ header {
 }
 
 .info {
-    background-color: #262626;
+    background-color: #F0A989;
     padding: 100px 20px;
     color: white;
     overflow-x: hidden;
@@ -148,7 +148,7 @@ header {
 .operational-details h3, .contact-social h3 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #F0A989;
+    color: #262626;
     font-weight: 700;
 }
 
@@ -198,7 +198,7 @@ header {
 footer {
     text-align: center;
     padding: 50px 40px;
-    background-color: #262626;
+    background-color: #F0A989;
     color: #efefef;
     position: relative;
     bottom: 0;
